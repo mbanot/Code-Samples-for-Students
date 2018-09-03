@@ -18,6 +18,7 @@ class Student:
 		self.classes = [class1, class2, class3, class4, class5]
 
 	def PrintDetails(self):
+            #this method holds all of the calculatey stuff for the student
 		numOfClasses = 0
 		classesString = ""
 		while (numOfClasses < 5):
@@ -25,8 +26,13 @@ class Student:
 				if (numOfClasses <4):
 					classesString += ", "
 				numOfClasses += 1
+                #we need to create a new string to give the gui later on
+		#this is the string that the GUI will show to the user once they make a new student
 		detailsString = "Hello, my name is " + self.name + ", my student ID is " + self.studentID + ", and my year level is " + str(self.yearLevel) + ". I take the following classes: " + classesString + "."
+		#I will print this string to the console so that I can test it and make sure that everything is running okay
 		print(detailsString)
+		#I need to give the GUI something back when it finishes running this method.
+		#I use the "return" statement to give back the user a string to display in the GUI.
 		return detailsString
 
 class Window:
@@ -115,22 +121,25 @@ class Window:
         self.textlabel.pack()
         
     def RunMethods(self):
-        #get required variables:
+        #get required information from the gui
+        #first, get the name of the student from the name entry field
         name = self.nameentry.get()
+        #next, get the id of the student from the id entry field
         id = self.identry.get()
         year = self.yearvalue.get()
+        #get the name of the first class from the class value
         classone = self.classonevalue.get()
         classtwo = self.classtwovalue.get()
         classthree = self.classthreevalue.get()
         classfour = self.classfourvalue.get()
         classfive = self.classfivevalue.get()
         
+        #next, we want to create a student object so that we are able to use it's methods
         student = Student(name, id, year, classone, classtwo, classthree, classfour, classfive)
+        #we need to make a variable to hold the result of the PrintDetails method. This is the thing that comes out of the "return" statement
         studentString = student.PrintDetails()
+        #in the messagebox we are going to show the text that came out of the printdetails method.
         messagebox.showinfo("You have created a student!", studentString)
-        
-    def GetName(self):
-        self.nameentry.get()
         
     def ShowWindow(self):
         tk.mainloop()
