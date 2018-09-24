@@ -38,6 +38,7 @@ class Student:
 class Window:
     
     #set up instance variables
+    # MAKE SURE THAT YOU ALWAYS DECALRE YOUR ROOT/PARENT WINDOW FIRST
     window = tk.Tk()
     nameentry = ttk.Entry()
     identry = ttk.Entry()
