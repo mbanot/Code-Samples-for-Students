@@ -1,4 +1,4 @@
-##Tkinter Graphical User Interface
+## Tkinter Graphical User Interface
 
 This folder should contain resources on **Tkinter GUI** programming skills and concepts. All programs in this folder should be written in **Python 3**.
 
